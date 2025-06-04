@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>My First Page</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>これはGitHubで作ったページです</p>
-  </body>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>音と反応の循環</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      border: 2px solid #000;
+      padding: 40px;
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .top-text {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .arrow-right::after {
+      content: "→";
+      margin-left: 10px;
+    }
+
+    .arrow-left::before {
+      content: "←";
+      margin-right: 10px;
+    }
+
+    .bottom-text {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .firework {
+      position: absolute;
+      right: 10%;
+      top: 40%;
+      width: 60px;
+      height: 60px;
+    }
+
+    .firework-dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      background: black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .firework-ray {
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: black;
+      top: 50%;
+      left: 50%;
+      transform-origin: center bottom;
+    }
+
+    /* 放射線8本 */
+    .firework-ray:nth-child(2) { transform: rotate(0deg) translateY(-30px); }
+    .firework-ray:nth-child(3) { transform: rotate(45deg) translateY(-30px); }
+    .firework-ray:nth-child(4) { transform: rotate(90deg) translateY(-30px); }
+    .firework-ray:nth-child(5) { transform: rotate(135deg) translateY(-30px); }
+    .firework-ray:nth-child(6) { transform: rotate(180deg) translateY(-30px); }
+    .firework-ray:nth-child(7) { transform: rotate(225deg) translateY(-30px); }
+    .firework-ray:nth-child(8) { transform: rotate(270deg) translateY(-30px); }
+    .firework-ray:nth-child(9) { transform: rotate(315deg) translateY(-30px); }
+
+    .firework-label {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-text">音<span class="arrow-right"></span>心に届ける</div>
+    <div class="bottom-text"><span class="arrow-left"></span>反応が届く</div>
+
+    <div class="firework">
+      <div class="firework-dot"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-ray"></div>
+      <div class="firework-label">花火</div>
+    </div>
+  </div>
+</body>
 </html>
